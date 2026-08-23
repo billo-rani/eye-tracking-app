@@ -20,3 +20,16 @@ buttons.forEach(button => {
     speak(texttosay);
   });
 });
+async function startCamera() {
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        const videoElement = document.getElementById('webcam');
+        videoElement.srcObject = stream;
+        console.log("Camera started successfully!");
+        videoElement.style.transform = "scaleX(-1)";
+    } catch (error) {
+        console.error("Error accessing camera:", error);
+        alert("Could not access camera. Please check permissions and ensure DroidCam is running.");
+    }
+}
+window.addEventListener('load', startCamera);
