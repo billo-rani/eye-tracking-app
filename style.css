@@ -22,6 +22,26 @@ body{
     margin-bottom: 30px;
     position: relative;
 }
+.cal-dot {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.cal-dot.active {
+    background-color: green;
+    box-shadow: 0 0 10px green;
+}
+#calibration-panel {
+    display: none;
+}
+#calibration-panel.active {
+    display: block;
+}
 /*#webcam {
     width: 1px;
     height: 1px;
